@@ -7,9 +7,15 @@
 # Disclaimer
 
 * [About](#about)
-* [Usage](#Usage)
+* [Usage](#usage)
   * [GitHub Actions](#github-actions)
   * [Unity Activation](#unity-activation)
+* [Conventional Commits](#conventional-commits)
+  * [Type](#type)
+  * [Scope](#scope)
+  * [Subject](#subject)
+  * [Body](#body)
+  * [Footer](#footer)
 * [Changelog](#changelog)
 * [Attribution](#attribution)
 
@@ -97,6 +103,109 @@ Create the following repository secrets:
 * `UNITY_LICENSE` - (Copy the contents of your license file into here)
 * `UNITY_EMAIL` - (Add the email address that you use to login to Unity)
 * `UNITY_PASSWORD` - (Add the password that you use to login to Unity)
+
+# Conventional Commits
+
+In order to abide by the conventional commit guidelines and in return get auto-generated changelogs, use the following.
+
+```
+<type>[optional scope]: <subject>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+## Type
+
+```
+[required] (!empty) value = {
+  'build',
+  'chore',
+  'ci',
+  'docs',
+  'feat',	# this correlates with MINOR in Semantic Versioning
+  'fix',	# this correlates with PATCH in Semantic Versioning
+  'perf',
+  'refactor',
+  'revert',
+  'style',
+  'test'
+}
+
+A trailing ! indicates a BREAKING CHANGE (correlating with MAJOR in Semantic Versioning).
+```
+
+## Scope
+
+```
+[optional] {lowercase | camelCase}
+
+A noun describing a section of the codebase surrounded by parenthesis.
+```
+
+## Subject
+
+```
+[required] (!empty) {lowercase | camelCase} (max-length: 100)
+
+A short summary of the code changes, without a trailing full-stop.
+```
+
+## Body
+
+```
+[optional] {freeform} (max-length: 100)
+
+Longer commit body with additional contextual information about the code changes.
+```
+
+## Footer
+
+```
+<token>: <value>
+[optional] (max-length: 100)
+token (Sentance-case) = {
+  'BREAKING CHANGE',	# Exception to the rule
+  'Acked-by',
+  'Cc',
+  'Fixes',
+  'Helped-by',
+  'Refs',
+  'Reviewed-by',
+  'Signed-off-by',
+}
+
+Any number of tokens may be included.
+```
+
+## Examples
+
+The following are all examples of valid commit messages.
+
+The commit message will also go through validation with `commitlint` upon issuing `git commit`.
+
+```
+feat(player): begin new implementation of input controller
+
+As per #123 recommendation input contoller is now based on blah.
+
+Basic movement added.
+
+Acked-by: Alice <alice@example.com>
+Signed-off-by: Bob <bob@example.com>
+Refs: #123
+Refs: 676104e, a215868
+```
+
+```
+fix: array parsing issue
+
+Fixes: #42
+Cc: Z
+Reviewed-by: Z
+Signed-off-by: Z
+```
 
 # Changelog
 
