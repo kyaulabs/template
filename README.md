@@ -1,4 +1,4 @@
-# Template Repository
+﻿# Template Repository
 [https://kyaulabs.com/](https://kyaulabs.com/)
 
 [![Contributor Covenant](https://img.shields.io/badge/contributor%20covenant-2.1-4baaaa.svg?logo=open-source-initiative&logoColor=4baaaa)](CODE_OF_CONDUCT.md) &nbsp; [![Conventional Commits](https://img.shields.io/badge/conventional%20commits-1.0.0-fe5196?style=flat&logo=conventionalcommits)](https://www.conventionalcommits.org/en/v1.0.0/) &nbsp; [![GitHub](https://img.shields.io/github/license/kyaulabs/template?logo=creativecommons)](LICENSE) &nbsp; [![Gitleaks](https://img.shields.io/badge/protected%20by-gitleaks-blue?logo=git&logoColor=seagreen&color=seagreen)](https://github.com/zricethezav/gitleaks)  
@@ -150,6 +150,8 @@ A noun describing a section of the codebase surrounded by parenthesis.
 [required] (!empty) {lowercase | camelCase} (max-length: 100)
 
 A short summary of the code changes, without a trailing full-stop.
+
+Adding [skip ci] will skip all push and pull_request workflows.
 ```
 
 ## Body
@@ -207,6 +209,10 @@ Reviewed-by: Z
 Signed-off-by: Z
 ```
 
+```
+chore(release): v0.0.1 [skip ci]
+```
+
 # Changelog
 
 Once you have published at least one proper commit using conventional commits syntax you will be able to generate a changelog.
@@ -219,6 +225,17 @@ After the initial run of git-cliff all subsequent runs should detect the version
 
 ```bash
 git cliff
+```
+
+A typical workflow should look like the following.
+
+```bash
+git add -A							# add all un-indexed and changed files to the commit
+git commit -S -a -m "<message>"		# add a conventional commit message and sign the commit
+git cliff							# generate a new changelog
+git add CHANGELOG.md				# add the changelog file to the commit
+git commit --amend --no-edit		# ammend the added file to the previous un-pushed commit
+git push -u origin develop			# finally, push the commit
 ```
 
 # Attribution
