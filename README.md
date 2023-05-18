@@ -230,12 +230,12 @@ git cliff
 A typical workflow should look like the following.
 
 ```bash
-git add -A							# add all un-indexed and changed files to the commit
+git add -A				# add all un-indexed and changed files to the commit
 git commit -S -a -m "<message>"		# add a conventional commit message and sign the commit
-git cliff							# generate a new changelog
-git add CHANGELOG.md				# add the changelog file to the commit
+git cliff				# generate a new changelog
+git add CHANGELOG.md			# add the changelog file to the commit
 git commit --amend --no-edit		# ammend the added file to the previous un-pushed commit
-git push -u origin develop			# finally, push the commit
+git push -u origin develop		# finally, push the commit
 ```
 
 # Attribution
