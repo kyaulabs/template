@@ -75,7 +75,7 @@ link_parsers = [
 ]
 # regex for parsing and grouping commits
 commit_parsers = [
-  { message = "^feat", group = "🚀 Features" },
+  { message = "^feat|^patch", group = "🚀 Features" },
   { message = "^fix", group = "🐛 Bug Fixes" },
   { message = "^doc", group = "📝 Documentation" },
   { message = "^perf", group = "⚡️ Performance" },

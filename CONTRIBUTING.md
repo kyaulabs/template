@@ -12,17 +12,19 @@ Thanks for taking an interest in this project. We want to make contributing to t
 
 We use Github to host code, to track issues and feature requests, as well as accept pull requests. Discussion and general support is typically done through Discord and/or Email.
 
-## We Use [Git Flow](https://www.gitkraken.com/learn/git/git-flow)
+## We Use [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow)
 
 All code changes happen through pull requests and are the best way to propose changes to the codebase. We actively welcome your pull requests:
 
+<div align="center"><img src=".github/media/git-flow.svg" width="240" height="365" style="margin-bottom:2ch" /></div>
+
 1. Fork the repo and create your own branch off of the `develop` branch.
 2. Name your branch `feature/<name>-<hash>-<desc>` where:
-  * `<name>` is your Github username
-  * `<hash>` is equal to `printf "%x\n" (date +"%H%M%S")`
-  * `<desc>` is a short description using hyphen as a separator
+   * `<name>` is your Github username
+   * `<hash>` is equal to `openssl rand hex 2`
+   * `<desc>` is a short description using hyphen as a separator
 3. If you have added code that should be tested, add tests.
-4. If you have changes APIs, update the documentation.
+4. If you have changed APIs, update the documentation.
 5. Ensure it passes whatever tests are being used.
 6. Make sure your code lints.
 7. Issue the pull request!
