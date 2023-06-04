@@ -2,10 +2,6 @@
 
 # References
 
-# Gitleaks Output
-
-*Replace this text with the output of `gitleaks detect -v` wrapped in code block.*
-
 # PR Checklist
 
 ## All Submissions:
