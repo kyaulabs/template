@@ -96,6 +96,10 @@ Add a  `.gitignore` template from [@github/gitignore](https://github.com/github/
 
 Take this time to update the `README.md` with at least basic repository information and a hopeful table of contents. It is okay if most sections are blank.
 
+### Update `cliff.toml`
+
+Be sure to modify `cliff.toml` and replace all the instances of `kyaulabs/template` with the new repository location.
+
 ### Add Actions
 
 Make sure you add the appropriate actions from the [@kyaulabs/template-workflows](https://github.com/kyaulabs/template-workflows) repository.
